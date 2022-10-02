@@ -1,0 +1,42 @@
+h1{
+    text-align: center;
+    padding: 30px;
+}
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    margin:auto;
+    padding: 10%;
+}
+
+.Game-Container {
+    width: 70%;
+    margin: auto;
+}
+
+.box div {
+    border: 5px solid lightblue;
+    flex-wrap: wrap;
+    display: flex;
+    height: 40px;
+    width: 45px;
+    margin: 2px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#Reset {
+    margin: 200px 100px;
+    border-radius: 10px;
+    border-color: lightblue;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    background-color:antiquewhite;
+    display: inline-block;
+    color: rgb(238, 163, 188);
+
+
+}
