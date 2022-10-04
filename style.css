@@ -33,9 +33,14 @@ h1{
 
 }
 
-/* .scoop1{
-    background-image: url("scoop1.png");
-} */
+.bowl {
+    display: block;
+  /* margin-left: auto;
+  margin-right: auto;
+  float:right; */
+  position: relative;
+  
+}
 
 #Reset {
     margin: 200px 100px;

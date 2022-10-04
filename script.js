@@ -1,9 +1,12 @@
 let box = document.querySelector(".box")
 let alphaLetters = []
 let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let chancesRemaining = 10
+// array of words for the computer to randomy choose from
+const wordsArr = ["BEACH","SUMMER","WATERPARK","HOLIDAY","POOL","ICECREAM","HEAT","COLORFUL","COLD"]
+
 // creating divs for alphabets letters 
 for (let i = 0; i < alphabet.length; i++) {
-  console.log(alphabet[i])
   let letter = document.createElement('div')
   letter.innerHTML = alphabet[i]
   letter.id = alphabet[i]
@@ -19,11 +22,18 @@ function clickLetter(event){
     console.log(event.target.classList[0])
     event.target.removeEventListener('click', clickLetter)
     event.target.style.backgroundColor = 'lightgrey'
+    chancesRemaining--
+    // removeImage()
+}
+
+function chooseWord() {
+  console.log("Choosing a word...")
+  // chooses a random word from the array
+  let randomWord = wordsArr[Math.floor(Math.random()*9)]
+  console.log(randomWord)
 }
 
 // in your click event listener for keyboard
-chancesRemaining--
-removeImage()
 
 let bowl = document.querySelector('.bowl')
 let scoop1 = document.querySelector('.scoop1')
@@ -85,3 +95,5 @@ function removeImage(){
 //     alphaLetters = []
 //  }
 // }
+
+chooseWord()
