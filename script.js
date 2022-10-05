@@ -4,9 +4,6 @@ let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 let chancesRemaining = 7
 let lineBox = document.querySelector('.line')
 //let playAgainBtn = document.querySelector .. ... .
-// let guessed = []
-// let answer = ''
-// let wordStatus = null
 // array of words for the computer to randomy choose from
 const wordsArr = ["BEACH","SUMMER","WATERPARK","HOLIDAY","POOL","ICECREAM","HEAT","COLORFUL","COLD","SUNSHINE"]
 
@@ -42,8 +39,8 @@ function clickLetter(event){
     // removeImage()
 }
 
-let randomWord
 
+let randomWord
 function chooseWord() {
   console.log("Choosing a word...")
   // chooses a random word from the array
@@ -58,9 +55,19 @@ function chooseWord() {
   console.log(randomWord)
 }
 
-// function guessedWord(){
-// wordStatus = answer.split('').map( alphaLetters => (gussed.indexOf(alphabet) >= 0 ? alphabet : "_" )).join('')
-// }
+let showLives = document.getElementById("mylives");
+comments = function () {
+  showLives.innerHTML = "You have " + chancesRemaining + " lives";
+  if (chancesRemaining < 1) {
+    showLives.innerHTML = "Game Over";
+  }
+  for (let i = 0; i < randomWord.length; i++) {
+    if (newLine === randomWord.length) {
+      showLives.innerHTML = "You Win!";
+    }
+  }
+  console.log(showLives)
+}
 
 // in your click event listener for keyboard
 let bowl = document.querySelector('.bowl')
