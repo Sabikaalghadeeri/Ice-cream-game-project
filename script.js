@@ -4,6 +4,7 @@ let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 let chancesRemaining = 10
 let lineBox = document.querySelector('.line')
 let resetBtn = document.querySelector('#Reset')
+let winner = "YOU WIN, Enjoy eating🍧"
 
 resetBtn.addEventListener('click', Reset)
 //let playAgainBtn = document.querySelector .. ... .
@@ -72,19 +73,25 @@ function clickLetter(event){
     if(randomWord.length === count) {
       console.log(`randomword length is: ${randomWord.length}`)
       console.log(`count is ${count}`)
-      console.log("YOU WIN, Enjoy eating🍧")
+      console.log("YOU WIN, Enjoy eating")
+       //display winning message
+       document.querySelector('#win').innerHTML = 'YOU WIN, Enjoy eating🍧'
     }
-  
-    
+    // if there is a winner , display a massage "YOU WIN.!" then exit the function
+    // and then display a message saying "Game Over"
+    // and exit the function
     if(!randomWord.includes(event)){
       clickAmounts++
       console.log(`click amounts: ${clickAmounts}`)
     }
     
     if(clickAmounts===10){
-      console.log("GAME OVER, better luck next time🫠.")
+      console.log("GAME OVER, better luck next time.")
+       //display losing message
+       document.querySelector('#lose').innerHTML = 'GAME OVER, better luck next time🫠.'
+      // document.querySelector('#game-over').innerHTML = window.alert("GAME OVER, better luck next time🫠.")
     }
-    return
+   
   }
   
 

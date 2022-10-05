@@ -1,8 +1,18 @@
+
+
+html{
+background-image: url(https://media.giphy.com/media/MJkPUQgZZHZ5jYHwlF/giphy.gif);
+
+}
+
 h1{
     padding: auto;
     text-align: center;
-    font-size: 30px;
+    font-size: 46px;
     font-style: italic;
+    color:rgb(139, 6, 93);
+    -webkit-text-fill-color: rgba(244, 54, 143, 0.682);
+    -webkit-text-stroke: 1.5px;
     
 }
 p{
@@ -17,6 +27,8 @@ p{
     flex-wrap: wrap;
     margin:auto;
     padding: 10%;
+    font-weight: bolder;
+    font-size: 24px;
 }
 
 
@@ -26,10 +38,10 @@ p{
 }
 
 .box div {
-    border: 5px solid lightblue;
+    border: 5px solid rgb(71, 137, 159);
     flex-wrap: wrap;
     display: flex;
-    height: 50px;
+    height: 30px;
     width: 70px;
     margin: 2px;
     align-items: center;
@@ -39,14 +51,25 @@ p{
 
 
 #Reset {
-    margin: 200px 100px;
+    margin: 200px 200px 50px 50px;
     border-radius: 10px;
-    border-color: lightblue;
+    border-color: rgb(71, 138, 160);
     padding: 10px 20px;
     text-align: center;
     font-weight: bold;
     font-size: 16px;
     background-color:antiquewhite;
     display: inline-block;
-    color: rgb(238, 163, 188);
+    color: rgb(161, 78, 105);
+}
+
+/* #win {
+    font-size: 42px;
+} */
+
+.line {
+    padding : 30px 50px 30px 50px ;
+    font-size: 50px;
+    text-align: center;
+
 }
