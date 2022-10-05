@@ -22,7 +22,7 @@ for (let i = 0; i < alphabet.length; i++) {
 }
 
 
-let clickAmounts = 0
+let chances = 0
 let count = 0
 let multiple_count = 0
 // to active the click letters
@@ -77,11 +77,11 @@ function clickLetter(event){
   
     
     if(!randomWord.includes(event)){
-      clickAmounts++
-      console.log(`click amounts: ${clickAmounts}`)
+      chances++
+      console.log(`click amounts: ${chances}`)
     }
     
-    if(clickAmounts===10){
+    if(chances===10){
       console.log("GAME OVER, better luck next time🫠.")
     }
     return
