@@ -3,6 +3,9 @@ let alphaLetters = []
 let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 let chancesRemaining = 7
 let lineBox = document.querySelector('.line')
+let resetBtn = document.querySelector('#Reset')
+
+resetBtn.addEventListener('click', Reset)
 //let playAgainBtn = document.querySelector .. ... .
 // array of words for the computer to randomy choose from
 const wordsArr = ["BEACH","SUMMER","WATERPARK","HOLIDAY","POOL","ICECREAM","HEAT","COLORFUL","COLD","SUNSHINE"]
@@ -28,11 +31,24 @@ function clickLetter(event){
     let letter = event.target.classList[0]
     if (randomWord.includes(letter)){
       //correct condition
-      let indexOfLetter = randomWord.indexOf(letter)
-      lineBox.children[indexOfLetter].innerHTML = letter
+      console.log(typeof randomWord)
+      console.log( randomWord)
+
+      // inside loop
+      // [C, O, L , O, R, F, U , L]
+      randomWord.split('').forEach((randomLetter, index) => {
+        if (randomLetter == letter){
+          lineBox.children[index].innerHTML = letter
+        }
+      })
+      // let indexOfLetter = randomWord.indexOf(letter)
+      //end loop
       //check all instances
       console.log('letter is in the word!')
       count ++
+      // randomWord.split('').forEach(letter => {
+      //   if (letter == )
+      // })
     } else {
       //incorrect condition
       console.log('guess again!')
@@ -43,7 +59,7 @@ function clickLetter(event){
     // removeImage()
 
     if(randomWord.length === count)
-    console.log("YOU WIN")
+    console.log("YOU WIN, Enjoy eating🍧")
     
     if(!randomWord.includes(event)){
       chances++
@@ -51,7 +67,7 @@ function clickLetter(event){
     }
     
     if(chances===7){
-      console.log("GAME OVER")
+      console.log("GAME OVER, better luck next time.")
     }
 
   }
@@ -140,15 +156,20 @@ function removeImage(){
 
 
 
-// function Reset(){
-  // chooseWord() ---> this function resets the game
-//     for (let i = 0; i < alphabet.length; i++) {
-//         console.log(alphabet[i])
-
-//     document.getElementById('alphabet[i]').innerHTML=''
-//     alphaLetters = []
-//  }
-// }
+function Reset(){
+  lineBox.innerHTML = ''
+  box.innerHTML = ''
+  for (let i = 0; i < alphabet.length; i++) {
+    let letter = document.createElement('div')
+    letter.innerHTML = alphabet[i]
+    letter.id = alphabet[i]
+    letter.classList.add(alphabet[i])
+    box.appendChild(letter)
+  //   letter.classList.add('letter')
+    letter.addEventListener('click', clickLetter)
+  }
+  chooseWord()
+}
 
 chooseWord()
 // guessedWord()
