@@ -18,6 +18,9 @@ for (let i = 0; i < alphabet.length; i++) {
   letter.addEventListener('click', clickLetter)
 }
 
+
+let chances = 0
+let count = 0
 // to active the click letters
 function clickLetter(event){
     console.log('letter was clicked!')
@@ -29,6 +32,7 @@ function clickLetter(event){
       lineBox.children[indexOfLetter].innerHTML = letter
       //check all instances
       console.log('letter is in the word!')
+      count ++
     } else {
       //incorrect condition
       console.log('guess again!')
@@ -37,8 +41,21 @@ function clickLetter(event){
     event.target.style.backgroundColor = 'lightgrey'
     chancesRemaining--
     // removeImage()
-}
 
+    if(randomWord.length === count)
+    console.log("YOU WIN")
+    
+    if(!randomWord.includes(event)){
+      chances++
+      console.log(chances)
+    }
+    
+    if(chances===7){
+      console.log("GAME OVER")
+    }
+
+  }
+  
 
 let randomWord
 function chooseWord() {
@@ -55,19 +72,20 @@ function chooseWord() {
   console.log(randomWord)
 }
 
-let showLives = document.getElementById("mylives");
-comments = function () {
-  showLives.innerHTML = "You have " + chancesRemaining + " lives";
-  if (chancesRemaining < 1) {
-    showLives.innerHTML = "Game Over";
-  }
-  for (let i = 0; i < randomWord.length; i++) {
-    if (newLine === randomWord.length) {
-      showLives.innerHTML = "You Win!";
-    }
-  }
-  console.log(showLives)
-}
+
+// let showLives = document.getElementById("mylives");
+// comments = function () {
+//   showLives.innerHTML = "You have " + chancesRemaining + " lives";
+//   if (chancesRemaining < 1) {
+//     showLives.innerHTML = "Game Over";
+//   }
+//   for (let i = 0; i < randomWord.length; i++) {
+//     if (newLine === randomWord.length) {
+//       showLives.innerHTML = "You Win!";
+//     }
+//   }
+//   console.log(showLives)
+// }
 
 // in your click event listener for keyboard
 let bowl = document.querySelector('.bowl')
