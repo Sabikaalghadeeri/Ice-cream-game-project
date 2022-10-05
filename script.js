@@ -1,9 +1,14 @@
 let box = document.querySelector(".box")
 let alphaLetters = []
 let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-let chancesRemaining = 10
+let chancesRemaining = 7
+let lineBox = document.querySelector('.line')
+//let playAgainBtn = document.querySelector .. ... .
+// let guessed = []
+// let answer = ''
+// let wordStatus = null
 // array of words for the computer to randomy choose from
-const wordsArr = ["BEACH","SUMMER","WATERPARK","HOLIDAY","POOL","ICECREAM","HEAT","COLORFUL","COLD"]
+const wordsArr = ["BEACH","SUMMER","WATERPARK","HOLIDAY","POOL","ICECREAM","HEAT","COLORFUL","COLD","SUNSHINE"]
 
 // creating divs for alphabets letters 
 for (let i = 0; i < alphabet.length; i++) {
@@ -20,21 +25,44 @@ for (let i = 0; i < alphabet.length; i++) {
 function clickLetter(event){
     console.log('letter was clicked!')
     console.log(event.target.classList[0])
+    let letter = event.target.classList[0]
+    if (randomWord.includes(letter)){
+      //correct condition
+      let indexOfLetter = randomWord.indexOf(letter)
+      lineBox.children[indexOfLetter].innerHTML = letter
+      //check all instances
+      console.log('letter is in the word!')
+    } else {
+      //incorrect condition
+      console.log('guess again!')
+    }
     event.target.removeEventListener('click', clickLetter)
     event.target.style.backgroundColor = 'lightgrey'
     chancesRemaining--
     // removeImage()
 }
 
+let randomWord
+
 function chooseWord() {
   console.log("Choosing a word...")
   // chooses a random word from the array
-  let randomWord = wordsArr[Math.floor(Math.random()*9)]
+  
+  randomWord = wordsArr[Math.floor(Math.random() *wordsArr.length)]
+//  ['C', 'O', 'L', 'D'].forEach....
+  randomWord.split('').forEach(letter => {
+    let newLine = document.createElement('span')
+    newLine.innerHTML = ' _ '
+    lineBox.appendChild(newLine)
+  })
   console.log(randomWord)
 }
 
-// in your click event listener for keyboard
+// function guessedWord(){
+// wordStatus = answer.split('').map( alphaLetters => (gussed.indexOf(alphabet) >= 0 ? alphabet : "_" )).join('')
+// }
 
+// in your click event listener for keyboard
 let bowl = document.querySelector('.bowl')
 let scoop1 = document.querySelector('.scoop1')
 let scoop2 = document.querySelector('.scoop2')
@@ -48,9 +76,9 @@ let cherry = document.querySelector('.cherry')
 let spoon = document.querySelector('.spoon')
 
 function removeImage(){
-  // if (chancesRemaining == 0) {
-  //   bowl.style.display = 'none'
-  // }
+  if (chancesRemaining == 0) {
+    bowl.style.display = 'none'
+  }
   if (chancesRemaining == 1 ) {
     spoon.style.display = 'none'
   }
@@ -88,6 +116,7 @@ function removeImage(){
 
 
 // function Reset(){
+  // chooseWord() ---> this function resets the game
 //     for (let i = 0; i < alphabet.length; i++) {
 //         console.log(alphabet[i])
 
@@ -97,3 +126,4 @@ function removeImage(){
 // }
 
 chooseWord()
+// guessedWord()

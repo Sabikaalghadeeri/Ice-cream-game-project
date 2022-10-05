@@ -1,13 +1,12 @@
-/* html{
-    background-image: url(./bowl.png);
-    background-repeat: no-repeat;
-    
-    
-} */
-
 h1{
     text-align: center;
-    padding: 30px;
+    font-size: 30px;
+    
+}
+p{
+    text-align: center;
+    padding: 2px;
+    font-size: 24px;
 }
 .box {
     display: flex;
@@ -15,6 +14,7 @@ h1{
     margin:auto;
     padding: 10%;
 }
+
 
 .Game-Container {
     width: 70%;
@@ -33,14 +33,12 @@ h1{
 
 }
 
-.bowl {
+/* .bowl
     display: block;
   /* margin-left: auto;
   margin-right: auto;
-  float:right; */
-  position: relative;
-  
-}
+  float:right; */ 
+
 
 #Reset {
     margin: 200px 100px;
@@ -53,6 +51,4 @@ h1{
     background-color:antiquewhite;
     display: inline-block;
     color: rgb(238, 163, 188);
-
-
 }
