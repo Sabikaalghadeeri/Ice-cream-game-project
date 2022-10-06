@@ -88,7 +88,7 @@ function clickLetter(event){
     if(clickAmounts===10){
       console.log("GAME OVER, better luck next time.")
        //display losing message
-       document.querySelector('#lose').innerHTML = 'GAME OVER, better luck next time🫠.'
+       document.querySelector('#game-over').innerHTML = 'GAME OVER, better luck next time🫠.'
       // document.querySelector('#game-over').innerHTML = window.alert("GAME OVER, better luck next time🫠.")
     }
    
@@ -125,40 +125,39 @@ let cherry = document.querySelector('.cherry')
 let spoon = document.querySelector('.spoon')
 
 function removeImage(){
-  if (chancesRemaining == 0) {
-    bowl.style.display = 'none'
-  }
-  if (chancesRemaining == 1 ) {
+  // // if (chancesRemaining == 0) {
+  // //   bowl.style.display = 'none'
+  // }
+  if (chancesRemaining == 0 ) {
     spoon.style.display = 'none'
   }
-  if (chancesRemaining == 2 ) {
+  if (chancesRemaining == 1 ) {
     scoop1.style.display = 'none'
   }
-  if (chancesRemaining == 3 ) {
+  if (chancesRemaining == 2 ) {
     scoop2.style.display = 'none'
   }
-  if (chancesRemaining == 4 ) {
+  if (chancesRemaining == 3 ) {
     scoop3.style.display = 'none'
   }
-  if (chancesRemaining == 5 ) {
+  if (chancesRemaining == 4 ) {
     lollipop1.style.display = 'none'
   }
-  if (chancesRemaining == 6 ) {
+  if (chancesRemaining == 5 ) {
     lollipop2.style.display = 'none'
   }
-  if (chancesRemaining == 7 ) {
+  if (chancesRemaining == 6 ) {
     syrup.style.display = 'none'
   }
-  if (chancesRemaining == 8 ) {
+  if (chancesRemaining == 7 ) {
     sparkel.style.display = 'none'
   }
-  if (chancesRemaining == 9 ) {
+  if (chancesRemaining == 8 ) {
     whippedCream.style.display = 'none'
   }
-  if (chancesRemaining == 10 ) {
+  if (chancesRemaining == 0 ) {
    cherry.style.display = 'none'
   }
-  
 }
 
 
