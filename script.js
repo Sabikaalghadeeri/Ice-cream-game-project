@@ -63,10 +63,14 @@ function clickLetter(event){
 
       console.log('guess again!')
     }
+    // count the chances remaining if it's wrong letter
+    else{
+      chancesRemaining--
+    }
 
     event.target.removeEventListener('click', clickLetter)
     event.target.style.backgroundColor = 'lightgrey'
-    chancesRemaining--
+    
     // removeImage()
     console.log(`outside loop randomword length is: ${randomWord.length}`)
     console.log(`outside loop count is ${count}`)
@@ -85,7 +89,7 @@ function clickLetter(event){
       console.log(`click amounts: ${clickAmounts}`)
     }
     
-    if(clickAmounts===10){
+    if(chancesRemaining === 0){
       console.log("GAME OVER, better luck next time.")
        //display losing message
        document.querySelector('#game-over').innerHTML = 'GAME OVER, better luck next time🫠.'

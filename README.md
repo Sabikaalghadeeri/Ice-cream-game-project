@@ -12,11 +12,6 @@
 # The approach taken:
     HTML , CSS , JavaScript and DOM
 
-# 
-    I defined the variables and the elements, and create divs for alphabets letters using for loop and DOM.
-    To active the click letters I used (click event) ... 
-
-
 # unsolved problems
 1- I had a problem with stopping the game when determining the winner or the loser, as the letters are still can be pressed.
 2- I couldn't activate my removeImage function due to time constraints, which I am not sure if my function will work or not.
